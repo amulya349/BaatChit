@@ -45,12 +45,12 @@ $(function(){
 	socket.on('connect', function(data){
 		// id = data.id
 		// socket.emit('load', id);
-		console.log("Connected to server")
+		// console.log("Connected to server")
 	});
 
 	socket.on('getid', function(data){
 		id = data.id
-		console.log("Got the id: "+data.id)
+		// console.log("Got the id: "+data.id)
 		socket.emit('load', id);
 	})
 
@@ -86,7 +86,7 @@ $(function(){
 	// Other useful 
 
 	socket.on('startChat', function(data){
-		console.log(data);
+		// console.log(data);
 		if(data.boolean && data.id == id) {
 
 			chats.empty();
