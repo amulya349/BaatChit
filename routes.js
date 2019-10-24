@@ -17,7 +17,8 @@ module.exports = function(path, app,io){
 	})
 
 	app.get('/getmyip', function(req, res){
-		var ip = req.connection.remoteAddress;
+		var ip = req.connection.remoteAddress || req.socket.remoteAddress;
+		// Checks both connection and socket for IP
 		res.send("Your IP Address is : "+ip)
 	})
 	// Initialize a new socket.io application
